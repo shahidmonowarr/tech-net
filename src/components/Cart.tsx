@@ -1,24 +1,25 @@
 
 import {
-    HiMinus,
-    HiOutlinePlus,
-    HiOutlineShoppingCart,
-    HiOutlineTrash,
+  HiMinus,
+  HiOutlinePlus,
+  HiOutlineShoppingCart,
+  HiOutlineTrash,
 } from 'react-icons/hi';
-import { IProduct } from '../types/globalTypes';
+import { useAppSelector } from '../redux/hook';
 import { Button } from './ui/button';
 import {
-    Sheet,
-    SheetContent,
-    SheetHeader,
-    SheetTitle,
-    SheetTrigger,
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
 } from './ui/sheet';
 
 export default function Cart() {
+  const {products} = useAppSelector((state) => state.cart);
+
   //! Dummy data
 
-  const products: IProduct[] = [];
   const total = 0;
 
   //! **
