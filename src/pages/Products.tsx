@@ -3,7 +3,7 @@ import { Label } from '../components/ui/label';
 import { Slider } from '../components/ui/slider';
 import { Switch } from '../components/ui/switch';
 import { useToast } from '../components/ui/use-toast';
-import { useGetProductsQuery } from '../redux/api/apiSlice';
+import { useGetProductsQuery } from '../redux/features/products/productApi';
 import { setPriceRange, toggleState } from '../redux/features/products/productSlice';
 import { useAppDispatch, useAppSelector } from '../redux/hook';
 import { IProduct } from '../types/globalTypes';
@@ -58,7 +58,7 @@ export default function Products() {
       </div>
       <div className="col-span-9 grid grid-cols-3 gap-10 pb-20">
         {productsData?.map((product: IProduct) => (
-          <ProductCard product={product} />
+          <ProductCard key={product._id} product={product} />
         ))}
       </div>
     </div>
