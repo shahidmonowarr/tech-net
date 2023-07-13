@@ -6,7 +6,7 @@ import { useSingleProductsQuery } from '../redux/features/products/productApi';
 export default function ProductDetails() {
   const { id } = useParams();
 
-  const { data: product, isLoading, error } = useSingleProductsQuery(id);
+  const { data: product } = useSingleProductsQuery(id);
 
   return (
     <>
